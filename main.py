@@ -45,11 +45,13 @@ async def moondream(data: Data):
     # Decode the base64 image data
     image_data = base64.b64decode(data.image)
     # Convert the binary data to a PIL image
-    pil_image = Image.open(io.BytesIO(image_data))
+    with open("test.jpg", 'w+') as f:
+        f.write(image_data)
+    pil_image = Image.open("test.jpg")
     
     # Perform any further processing on the PIL image here
     # For demonstration, let's just convert it to a grayscale image    
-    pil_image.save("test.jpg")
+    # pil_image.save("test.jpg")
     # Optionally save or manipulate the processed image
     # processed_image.save("processed_image.jpg")  # Example of saving the processed image
             

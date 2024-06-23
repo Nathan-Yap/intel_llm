@@ -2,10 +2,11 @@ import requests
 import base64
 
 # Define the URL of the FastAPI server
-url = "http://127.0.0.1:8000/moondream"
+# url = "http://127.0.0.1:8000/moondream"
+url = "http://5ac4-146-152-233-32.ngrok-free.app/moondream"
 
 # Path to the image you want to test with
-image_path = "2banana.jpg"
+image_path = "the_whole_gang.jpg"
 
 # Open the image file in binary mode
 with open(image_path, "rb") as image_file:
@@ -19,7 +20,7 @@ encoded_image = base64.b64encode(image_data).decode()
 payload = {"image": encoded_image}
 
 # Send a POST request with the payload
-response = requests.post(url, json=payload)
+response = requests.post(url, json=payload, headers={"ngrok-skip-browser-warning":"69420"})
 
 # Print the response from the server
 print(response.json())
