@@ -23,9 +23,6 @@ moondream_model = AutoModelForCausalLM.from_pretrained(
     torch_dtype=DTYPE, device_map={"": DEVICE}
 )
 
-# # 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
-# huggingfacehub_api_token = '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'
-
 # llm = HuggingFaceHub(repo_id='tiiuae/falcon-7b-instruct', huggingfacehub_api_token=huggingfacehub_api_token)
 
 class Data(BaseModel):
